@@ -1,6 +1,6 @@
 "use strick";
 //!selection Element
-const btnBotton = document.querySelector("#btn-botton");
+const btnBotton = document.querySelector("#buttons");
 const btnSolid = document.querySelector(".btn-solid");
 const btnGradient = document.querySelector(".btn-gradient");
 const colorValue = document.querySelector(".code");
@@ -40,7 +40,13 @@ const hexCodeValue = [
 ];
 
 let index = 0;
-btnBotton.style.marginTop = "-40px";
+
+
+
+
+
+btnBotton.style.background = "-40px"
+
 
 //button transition smoothly
 function style() {
@@ -61,13 +67,14 @@ function setGradientBackground(randomColor1, randomColor2) {
 }
 
 //Event listener for solid colors
+
 btnSolid.addEventListener("click", function () {
   style();
   setSolidBackground(colors[index], hexCodeValue[index]);
   index = (index + 1) % colors.length;
 });
 
-//Event listen for gradient colors
+// Event listen for gradient colors
 btnGradient.addEventListener("click", () => {
   style();
   let randomColor1 = Math.trunc(Math.random() * colors.length);

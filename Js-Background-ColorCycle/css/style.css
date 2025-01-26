@@ -43,7 +43,7 @@ nav ul {
   /* height: 100%; */
 }
 
-#btn-botton {
+#buttons {
   display: flex;
   justify-content: center;
   align-items: center;
