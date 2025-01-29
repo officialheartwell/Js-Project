@@ -29,6 +29,10 @@ nav ul {
   font-weight: 600;
 }
 
+li a {
+  text-decoration: none;
+}
+
 #content {
   display: flex;
   flex-direction: column;
