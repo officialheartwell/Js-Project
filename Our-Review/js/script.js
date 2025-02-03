@@ -16,17 +16,17 @@ const reviews = [
   },
   {
     id: 3,
-    img: "/Our-Review/images/image-victor.jpg",
-    name: "Victor Morgan",
-    job: "Project Manager",
-    text: "I needed some structure from professionals who can help me learn programming step by step. I was encouraged to enroll by a former student of theirs who can only say wonderful things about the program.",
-  },
-  {
-    id: 4,
     img: "/Our-Review/images/image-kira.jpg",
     name: "Kira Jopan",
     job: "Intern",
     text: "The next 12 weeks was the best - and most grueling - time of my life. Since completing the course, I’ve successfully switched careers,  Jonathan Walters Verified Graduate The team was very supportive and kept me motivated ",
+  },
+  {
+    id: 4,
+    img: "/Our-Review/images/image-victor.jpg",
+    name: "Victor Morgan",
+    job: "Project Manager",
+    text: "I needed some structure from professionals who can help me learn programming step by step. I was encouraged to enroll by a former student of theirs who can only say wonderful things about the program.",
   },
   {
     id: 5,
@@ -37,8 +37,45 @@ const reviews = [
   },
 ];
 
+//Selection of project
+const img = document.getElementById("person-img");
+const author = document.getElementById("author");
+const job = document.getElementById("job");
+const info = document.getElementById("info");
 
-let currentItem = 0
+//Button selection
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const randomBtn = document.getElementById("random-btn");
 
-console.log(reviews);
+let currentItem = 0;
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   showMode(currentItem);
+// });
+
+function showMode(person) {
+  let item = reviews[person];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+}
+
+prevBtn.addEventListener("click", () => {
+  currentItem--;
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1;
+  }
+  showMode(currentItem);
+});
+
+nextBtn.addEventListener("click", () => {
+  showMode(currentItem);
+  currentItem = (currentItem + 1) % reviews.length;
+});
+
+randomBtn.addEventListener("click", () => {
+  currentItem = Math.trunc(Math.random() * reviews.length - 1);
+  showMode(currentItem);
+});
