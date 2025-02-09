@@ -5,47 +5,163 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   font-family: serif;
   font-size: 20px;
 }
 
+header {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(224, 237, 250);
+}
+
+.navheader {
+  position: relative;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.241);
+}
+
+.logo {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 110px;
+  text-align: center;
+  margin: 16px;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(167, 2, 2);
+  transition: 500ms;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background-color: rgb(242, 254, 254);
+  position: absolute;
+  top: 15px;
+  left: 16rem;
+}
+
+.btn-close:hover {
+  transform: rotate(360deg);
+}
 
 /* HAMBURGER MENU STYLE */
 .hamburger-menu {
-  width: 35px;
-  height: 25px;
+  width: 30px;
+  height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   display: hidden;
-  border: 1px solid #000;
+  position: absolute;
+  top: 16px;
+  right: 20px;
 }
 
-.hamburger{
-    height: 6px;
-    width: 100%;
-    position: relative;
-    border-radius: 5px;
-    background-color: black;
+.hamburger {
+  height: 5px;
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+  background-color: black;
 }
 
-.hamburger::before, .hamburger::after {
+.hamburger::before,
+.hamburger::after {
   content: "";
   position: absolute;
-  height: 6px;
+  height: 5px;
   width: 100%;
   border-radius: 5px;
   background-color: black;
   top: 0;
   left: 0;
+  transition: 500ms;
 }
 
-.hamburger::before{
-    transform: translateY(-9px);
+.hamburger::before {
+  transform: translateY(-9px);
 }
 
-.hamburger::after{
-    transform: translateY(9px);
+.hamburger::after {
+  transform: translateY(9px);
+}
+
+.toggle .hamburger {
+  background: transparent;
+}
+
+.toggle .hamburger::before {
+  transform: rotate(-45deg);
+  transform: translate(35px 35px);
+}
+
+.toggle .hamburger::after {
+  transform: rotate(45deg);
+  transform: translate(35px -35px);
+}
+
+
+/* Navigation bar Menu */
+.navbar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.menu {
+  width: 40%;
+  height: 100%;
+  background-color: rgb(244, 250, 255);
+  transition: 500ms;
+}
+
+.menu li {
+  list-style: none;
+  display: flex;
+}
+
+.menu li a {
+  width: 100%;
+  padding: 20px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu li a:hover {
+  background-color: rgb(212, 235, 255);
+}
+
+.icons {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  bottom: 25px;
+  align-items: center;
+}
+
+.icon {
+  width: 25px;
+  height: 30px;
+}
+
+.icon:hover{
+  transform: scale(1.2);
+  transition: 500ms;
+}
+
+.x {
+  width: 30px;
+  height: 30px;
+  margin: px 0;
+}
+
+.hidden {
+  transform: translate(-350px);
 }
