@@ -16,7 +16,8 @@ header {
 }
 
 .navheader {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid rgba(128, 128, 128, 0.241);
 }
 
@@ -39,9 +40,7 @@ header {
   padding: 3px 9px;
   border-radius: 20px;
   background-color: rgb(242, 254, 254);
-  position: absolute;
-  top: 15px;
-  left: 16rem;
+  margin: 15px;
 }
 
 .btn-close:hover {
@@ -104,7 +103,6 @@ header {
   transform: translate(35px -35px);
 }
 
-
 /* Navigation bar Menu */
 .navbar {
   position: relative;
@@ -115,7 +113,7 @@ header {
 }
 
 .menu {
-  width: 40%;
+  width: 45%;
   height: 100%;
   background-color: rgb(244, 250, 255);
   transition: 500ms;
@@ -131,9 +129,11 @@ header {
   padding: 20px;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
+  transition: 300ms;
 }
 
 .menu li a:hover {
+  transform: translate(6px);
   background-color: rgb(212, 235, 255);
 }
 
@@ -151,7 +151,7 @@ header {
   height: 30px;
 }
 
-.icon:hover{
+.icon:hover {
   transform: scale(1.2);
   transition: 500ms;
 }
@@ -164,4 +164,30 @@ header {
 
 .hidden {
   transform: translate(-350px);
+}
+
+/* Side Bar for Tablet */
+@media screen and (max-width: 428px) {
+  .logo {
+    font-size: 18px;
+    line-height: 2;
+    margin: 20px 10px 0px 0px;
+  }
+
+  .menu {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(244, 250, 255);
+    transition: 500ms;
+    z-index: 1;
+  }
+
+  .btn-close {
+    top: 15px;
+    left: 10rem;
+  }
+
+  .hidden {
+    transform: translate(-400px);
+  }
 }
